@@ -1,0 +1,80 @@
+﻿﻿信息系统与数据库技术练习15答题卡
+
+班级：19信管2班
+姓名：林进玮
+学号：20190307240       
+
+*注：排除答案放置在序号下方。* /
+
+（一）
+1。
+创建数据库警告
+2。
+使用警告
+3。
+创建表产品
+（
+Pid CHAR（4）CONSTRAINT pk_Pid PRIMARY KEY，
+Pname VARCHAR（40）NOT NULL，
+规格VARCHAR（40）NOT NULL，
+重量小数（16,2），
+价格，
+代码CHAR（15），
+Cid CHAR（4）
+）
+4。
+ALTER TABLE产品
+DROP CONSTRAINT pk_Pid
+5，
+ALTER TABLE产品
+添加约束pk_Pid主键（Pid）
+6。
+ALTER TABLE产品
+添加约束ix_Code UNIQUE（代码）
+7
+插入产品（Pid，Pname，Specs，Cid，Code）
+值（'PD02'，'商品2'，'EQ2080'，'CT01'，202006011234567
+8。
+插入产品（Pid，Pname，Specs，Cid，Code）
+值（'PD03'，'商品3'，'EQ2081'，'CT02'，202006011234567）
+9。
+创建表类别
+（
+Cid CHAR（4）CONSTRAINT pk_Cid主键，
+Cname VARCHAR（40）NOT NULL约束ix_Pname UNIQUE，
+UpdateDate DATETIME
+）
+10。
+创建表仓库
+（
+Wid CHAR（4）主键，
+Wname VARCHAR（40）NOT NULL，
+区域小数（20,3）默认1234.567，
+MaxStock小数（20,3）
+）
+11。
+插入仓库（Wid，Wname）
+值（'W001'，'五金'）
+12
+选择 *
+从仓库
+13
+更改表类别
+为UpdateDate添加约束DF_updDate DEFAULT GETDATE（）
+14。
+插入类别（Cid，Cname）
+VALUES（'CT01'，'钢板'）
+15
+更改表类别
+使用值添加InitDate DateTime默认'2019-11-5'
+16。
+选择 *
+从类别
+17。
+创建表CP
+（
+Cid CHAR（4），
+输入CHAR（4），
+约束pk_CP主键（Cid，Pid），
+注释文字
+）
